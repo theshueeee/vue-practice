@@ -5,3 +5,5 @@ in vite config file, add server port to 3000
 installing tailwind
 
 components that have data passed in are knowned as props
+
+npm i vue-router

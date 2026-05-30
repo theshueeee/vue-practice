@@ -2,6 +2,17 @@
 import jobData from "@/jobs.json";
 import { ref } from "vue";
 import Joblisting from "./Joblisting.vue";
+import {defineProps} from "vue";
+
+defineProps({
+    limit: {
+        type: Number,
+    },
+    showButton: {
+        type: Boolean,
+        default: false
+    }
+});
 
 const jobs = ref(jobData.jobs);
 </script>
@@ -16,13 +27,21 @@ const jobs = ref(jobData.jobs);
       <!-- Shoe job listing when done loading -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Joblisting
-          v-for="job in jobs"
+          v-for="job in jobs.slice(0, limit || jobs.length)"
           :key="job.id"
           :job="job"
         />
       </div>
     </div>
   </section>
+
+  <section v-if="showButton" class="m-auto max-w-lg my-10 px-6">
+      <a
+        href="/jobs"
+        class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
+        >View All Jobs</a
+      >
+    </section>
 
 
 </template>

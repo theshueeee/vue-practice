@@ -1,0 +1,3 @@
+npm create vue@latest frontend
+
+in vite config file, add server port to 3000

@@ -4,6 +4,7 @@ import Jobsview from '@/views/Jobsview.vue';
 import Notfoundview from '@/views/Notfoundview.vue';
 import Jobview from '@/views/Jobview.vue';
 import Addjobview from '@/views/Addjobview.vue';
+import Editjobview from '@/views/Editjobview.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +29,10 @@ const router = createRouter({
         path: '/jobs/add',
         name: 'add-job',
         component: Addjobview,
+    },{
+        path: '/jobs/edit/:id',
+        name: 'edit-job',
+        component: Editjobview,
     },
   ],
 });

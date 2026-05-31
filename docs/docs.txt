@@ -7,3 +7,9 @@ installing tailwind
 components that have data passed in are knowned as props
 
 npm i vue-router
+
+dont fuck with vue and imports
+
+reactive() only takes objects. It does not take primitives like strings, numbers and booleans.
+ref() can take objects or primitives. It uses ref() under the hood.
+ref() has a .valueproperty for reassigning, reactive() doesn't use .value and can't be reassigned
